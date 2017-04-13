@@ -2,6 +2,7 @@ import telnetlib
 import socket
 import sys
 import time
+import getpass
 
 TELNET_PORT = 23
 TELNET_TIMEOUT = 6
@@ -31,9 +32,11 @@ def main(ip_addr, username, password, cmd):
 
 
 if __name__ == "__main__":
-    ip_addr = '184.105.247.70'
-    username = 'pyclass'
-    password = '88newclass'
+    ip_addr = raw_input("IP address: ")
+    ip_addr = ip_addr.strip()
+    username = raw_input("Username: ")
+    username - username.strip()
+    password = getpass.getpass()
     cmd = sys.argv[1]
     main(ip_addr, username, password, cmd)
 
